@@ -75,6 +75,10 @@ models = [
             {
                 "table_name": "gastos_despesas_mensais",
                 "fields": fields
+            },
+            {
+                "table_name": "gastos_despesas_mensais2",
+                "fields": fields
             }
         ]
 

@@ -85,7 +85,6 @@ class TextFiles:
         return text_readme
     
     #### MODELS
-
     def db_connection_handler_text(self, type_database:str) ->str:
         db_handler_text = ''
         # IMPORTS
@@ -168,7 +167,7 @@ class TextFiles:
             name_camecase = self.convert_snakecase_to_camelcase(text=model['table_name'])
             db_handler_text = f"{db_handler_text}from src.models.{name_camecase} import {name_camecase}\n"
         db_handler_text = f"{db_handler_text}\n"
-        db_handler_text = f"{db_handler_text}class DataBasesHandler\n"
+        db_handler_text = f"{db_handler_text}class DataBasesHandler:\n"
         db_handler_text = f"{db_handler_text}\n\n{CONFIG['spacing_1']}def __init__(self) -> None:\n"
         db_handler_text = f"{db_handler_text}\n\n{CONFIG['spacing_2']}self.engine = DBConnectionHandler().get_engine()\n"
         db_handler_text = f"{db_handler_text}\n\n{CONFIG['spacing_1']}def create_datebase(self)->None:\n"
